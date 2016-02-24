@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class AirportRadar {
-	
+
 	/**
 	 * @author Hamza Raza
 	 *
@@ -45,9 +45,8 @@ public class AirportRadar {
 						x = increment * Math.cos(angleRadians);
 						y = increment * Math.sin(angleRadians);
 
-						double lineDistance = Math.sqrt(Math.pow(x
-								- points.get(i).x, 2)
-								+ Math.pow(y - points.get(i).y, 2));
+						double lineDistance = Math
+								.sqrt(Math.pow(x - points.get(i).x, 2) + Math.pow(y - points.get(i).y, 2));
 						if (lineDistance <= ranges.get(i)) {
 							numOfTowers++;
 							points.remove(i);
@@ -55,12 +54,11 @@ public class AirportRadar {
 							i--;
 							break;
 						}
-						increment+= incrementValue;
+						increment += incrementValue;
 					}
 					increment = 0;
 				}
-				System.out.format("The jet will appear on %d radar screens.%n",
-						++numOfTowers);
+				System.out.format("The jet will appear on %d radar screens.%n", ++numOfTowers);
 			}
 			sc.close();
 		} catch (FileNotFoundException e) {
